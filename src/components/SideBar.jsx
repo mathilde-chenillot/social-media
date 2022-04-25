@@ -6,7 +6,7 @@ import {
   Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch,
 } from '@mui/material';
 
-export function SideBar() {
+function SideBar() {
   return (
     <Box
       flex={1}

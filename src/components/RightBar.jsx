@@ -1,11 +1,14 @@
 /* eslint-disable linebreak-style */
 import {
-  Avatar, AvatarGroup, Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography,
+  Avatar,
+  AvatarGroup,
+  Box, Divider, ImageList, ImageListItem, List, ListItem, ListItemAvatar, ListItemText, Typography,
 } from '@mui/material';
+import { Fragment } from 'react';
 
 import datasFile from '../data';
 
-export function RightBar() {
+function RightBar() {
   const datas = datasFile[0];
 
   return (
@@ -50,8 +53,8 @@ export function RightBar() {
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
           {
             datas.conversations.map((conversation) => (
-              <>
-                <ListItem key={conversation.id} alignItems="flex-start">
+              <Fragment key={conversation.id}>
+                <ListItem alignItems="flex-start">
                   <ListItemAvatar>
                     <Avatar alt={conversation.name} src={conversation.src} />
                   </ListItemAvatar>
@@ -73,7 +76,7 @@ export function RightBar() {
                   />
                 </ListItem>
                 <Divider variant="inset" component="li" />
-              </>
+              </Fragment>
             ))
           }
 

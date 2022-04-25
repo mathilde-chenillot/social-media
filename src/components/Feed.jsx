@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import Post from './Post';
 
-export function Feed() {
+function Feed() {
   return (
     <Box flex={4} p={2}>
       <Post />
