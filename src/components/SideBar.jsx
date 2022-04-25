@@ -6,7 +6,7 @@ import {
   Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch,
 } from '@mui/material';
 
-function SideBar() {
+function SideBar({ mode, setMode }) {
   return (
     <Box
       flex={1}
@@ -84,7 +84,7 @@ function SideBar() {
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
-              <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')} />
+              <Switch onClick={() => setMode(mode === 'light' ? 'dark' : 'light')} />
             </ListItemButton>
           </ListItem>
         </List>

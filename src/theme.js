@@ -1,19 +1,21 @@
-import { createTheme } from "@mui/material";
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable linebreak-style */
+import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
-    // where we store colors
-    palette: {
-        primary: {
-            main: "#1760a5",
-            light: "skyblue",
-        },
+  // where we store colors
+  palette: {
+    primary: {
+      main: '#1760a5',
+      light: 'skyblue',
+    },
 
-        secondary: {
-            main: "#15c630",
-        },
+    secondary: {
+      main: '#15c630',
+    },
 
-        otherColor: {
-            main: "#999",
-        },
-    }
-})
+    otherColor: {
+      main: '#999',
+    },
+  },
+});
