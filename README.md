@@ -3,7 +3,7 @@
 Site totalement responsive ressemblant à un réseau social.
 
 Utilisation de
-<li>
-  <ul>React</ul>
-  <ul>Material UI</ul>
- </li>
+<ul>
+  <li>React</li>
+  <li>Material UI</li>
+ </ul>
