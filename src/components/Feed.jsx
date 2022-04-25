@@ -1,10 +1,24 @@
-import { Box } from '@mui/material';
-import React from 'react'
+/* eslint-disable linebreak-style */
+import {
+  Box,
+} from '@mui/material';
+import Post from './Post';
 
-export const Feed = () => {
+export function Feed() {
   return (
-    <Box bgcolor="pink" flex={1} p={2}>Feed</Box>
-  )
+    <Box flex={4} p={2}>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </Box>
+  );
 }
 
 export default Feed;
