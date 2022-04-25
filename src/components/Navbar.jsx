@@ -1,13 +1,16 @@
+/* eslint-disable linebreak-style */
 import { Mail, Notifications, Pets } from '@mui/icons-material';
-import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
-import React, { useState } from 'react'
+import {
+  AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography,
+} from '@mui/material';
+import { useState } from 'react';
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
   justifyContent: 'space-between',
 });
 
-const Search = styled('div')(({theme})=>({
+const Search = styled('div')(({ theme }) => ({
   backgroundColor: 'white',
   padding: '0 10px',
   borderRadius: theme.shape.borderRadius,
@@ -19,62 +22,60 @@ const Search = styled('div')(({theme})=>({
 // IconsContainer for pc
 // UserBox for mobile
 
-const IconsContainer = styled(Box)(({theme})=>({
+const IconsContainer = styled(Box)(({ theme }) => ({
   display: 'none',
   alignItems: 'center',
   gap: '20px',
-  [theme.breakpoints.up('sm')] : {
+  [theme.breakpoints.up('sm')]: {
     display: 'flex',
-  }
+  },
   // if it's small or bigger than small
   // if it's smaller than this breakpoint which is 600 it's gonna be displayed "none"
 }));
 
-const UserBox = styled(Box)(({theme})=>({
+const UserBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: '10px',
-  [theme.breakpoints.up('sm')] : {
+  [theme.breakpoints.up('sm')]: {
     display: 'none',
-  }
+  },
 }));
 
 // Component
 
-const Navbar = () => {
-
+function Navbar() {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   return (
-    <AppBar position='sticky'>
+    <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant='h6' sx={{ display: { xs: "none", sm: "block"}}}>NavBar</Typography>
-          <Pets sx={{ display: { xs: "block", sm: "block"}}} />
-          <Search>
-            <InputBase placeholder='search ...' />
-          </Search>
-          <IconsContainer>
-            <Badge badgeContent={4} color='error'>
-              <Mail />
-            </Badge>
-            <Badge badgeContent={2} color='error'>
-              <Notifications />
-            </Badge>
-            <Avatar
-              onClick={() => setOpen(!open)}
-              sx={{ width: 30, height: 30 }}
-              src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            />
-          </IconsContainer>
-          <UserBox>
-            <Avatar
-              onClick={() => setOpen(!open)}
-              sx={{ width: 30, height: 30 }}
-              src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            />
-            <Typography variant='span'>Mathilde</Typography>
-          </UserBox>
+        <Typography variant="h6" sx={{ display: { xs: 'none', sm: 'block' } }}>NavBar</Typography>
+        <Pets sx={{ display: { xs: 'block', sm: 'block' } }} />
+        <Search>
+          <InputBase placeholder="search ..." />
+        </Search>
+        <IconsContainer>
+          <Badge badgeContent={4} color="error">
+            <Mail />
+          </Badge>
+          <Badge badgeContent={2} color="error">
+            <Notifications />
+          </Badge>
+          <Avatar
+            onClick={() => setOpen(!open)}
+            sx={{ width: 30, height: 30 }}
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+        </IconsContainer>
+        <UserBox>
+          <Avatar
+            onClick={() => setOpen(!open)}
+            sx={{ width: 30, height: 30 }}
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+          <Typography variant="span">Mathilde</Typography>
+        </UserBox>
       </StyledToolbar>
 
       {/* Menu */}
@@ -98,7 +99,7 @@ const Navbar = () => {
         <MenuItem>Logout</MenuItem>
       </Menu>
     </AppBar>
-  )
+  );
 }
 
 export default Navbar;
