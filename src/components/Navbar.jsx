@@ -1,6 +1,6 @@
 import { Mail, Notifications, Pets } from '@mui/icons-material';
 import { AppBar, Avatar, Badge, Box, InputBase, Menu, MenuItem, styled, Toolbar, Typography } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 
 const StyledToolbar = styled(Toolbar)({
   display: 'flex',
@@ -22,7 +22,7 @@ const Search = styled('div')(({theme})=>({
 const IconsContainer = styled(Box)(({theme})=>({
   display: 'none',
   alignItems: 'center',
-  gap: '10px',
+  gap: '20px',
   [theme.breakpoints.up('sm')] : {
     display: 'flex',
   }
@@ -33,7 +33,7 @@ const IconsContainer = styled(Box)(({theme})=>({
 const UserBox = styled(Box)(({theme})=>({
   display: 'flex',
   alignItems: 'center',
-  gap: '20px',
+  gap: '10px',
   [theme.breakpoints.up('sm')] : {
     display: 'none',
   }
@@ -42,6 +42,10 @@ const UserBox = styled(Box)(({theme})=>({
 // Component
 
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+  console.log(open);
+
   return (
     <AppBar position='sticky'>
       <StyledToolbar>
@@ -57,10 +61,18 @@ const Navbar = () => {
             <Badge badgeContent={2} color='error'>
               <Notifications />
             </Badge>
-            <Avatar sx={{ width: 30, height: 30 }} src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+            <Avatar
+              onClick={() => setOpen(!open)}
+              sx={{ width: 30, height: 30 }}
+              src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            />
           </IconsContainer>
           <UserBox>
-            <Avatar sx={{ width: 30, height: 30 }} src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+            <Avatar
+              onClick={() => setOpen(!open)}
+              sx={{ width: 30, height: 30 }}
+              src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            />
             <Typography variant='span'>Mathilde</Typography>
           </UserBox>
       </StyledToolbar>
@@ -70,8 +82,8 @@ const Navbar = () => {
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
         // anchorEl={anchorEl}
-        open={true}
-        // onClose={handleClose}
+        open={open}
+        onClose={() => setOpen(false)}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right',
